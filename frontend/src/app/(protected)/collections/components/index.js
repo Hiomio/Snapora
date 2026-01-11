@@ -1,0 +1,12 @@
+// Export all collection components for easy imports
+export { default as CollectionCard } from './CollectionCard';
+export { default as CollectionHeader } from './CollectionHeader';
+export { default as CollectionStats } from './CollectionStats';
+export { default as CollectionQuickAccess } from './CollectionQuickAccess';
+export { default as CollectionGrid } from './CollectionGrid';
+export { default as CollectionList } from './CollectionList';
+export { default as CreateCollectionModal } from './CreateCollectionModal';
+export { default as EditCollectionModal } from './EditCollectionModal';
+export { default as DeleteConfirmationModal } from './DeleteConfirmationModal';
+export { default as CollectionDetailsModal } from './CollectionDetailsModal';
+export { default as SearchAndFilters } from './SearchAndFilters'; 
