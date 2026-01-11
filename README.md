@@ -1,289 +1,355 @@
-﻿# 📸 Pixora - Image Sharing Platform
-
-Pixora is a comprehensive image sharing platform that combines the power of modern web technologies to create an engaging and feature-rich experience for photographers, artists, and content creators. Built with performance and user experience in mind, it offers a seamless way to share, discover, and interact with visual content.
-
-![Website Screenshot](./frontend/public/images/screenshot.jpg)
-
-## 🚀 Live Demo
-
-Check out the live demo of the application [here](https://pixora-nry.vercel.app/).
-
-### 🎯 Key Highlights
-
-- **🚀 High Performance**: Built with Next.js 15 and optimized for speed
-- **🎨 Beautiful UI**: Modern dark theme with responsive design
-- **🔐 Secure**: JWT authentication with Google OAuth integration
-- **📱 Mobile-First**: Fully responsive across all devices
-- **☁️ Cloud-Ready**: Integrated with Cloudinary for image optimization
-- **🔍 Advanced Search**: Smart search with filters and trending content
-- **💬 Interactive**: Comments, likes, favorites, and social features
-
----
-
-## 🌟 Features
-
-### 🔐 Authentication & Security
-- **Multi-Provider Login**: Email/password + Google OAuth
-- **Email Verification**: Secure account activation
-- **JWT Tokens**: Stateless authentication
-- **Protected Routes**: Role-based access control
-- **Password Security**: Bcrypt hashing with salt rounds
-
-### 📸 Image Management
-- **Drag & Drop Upload**: Intuitive file upload interface
-- **Image Optimization**: Automatic compression and resizing
-- **Multiple Formats**: Support for JPEG, PNG, WebP, GIF
-- **Cloud Storage**: Cloudinary integration for CDN delivery
-- **Bulk Operations**: Multiple image upload and management
-
-### 🎨 User Experience
-- **Dark Theme**: Eye-friendly interface with customizable themes
-- **Responsive Design**: Perfect on desktop, tablet, and mobile
-- **Masonry Layout**: Pinterest-style image grid
-- **Infinite Scroll**: Seamless content loading
-- **Keyboard Shortcuts**: Power user features
-
-### 🔍 Discovery & Search
-- **Smart Search**: Image search
-- **Advanced Filters**: By category, date, popularity, tags
-- **Trending Content**: Algorithm-based recommendations
-- **Tag System**: Organized content categorization
-- **Collections**: Curated image collections
-- **User Profiles**: Detailed creator profiles
-
-### 💬 Social Features
-- **Like System**: Heart reactions with real-time updates
-- **Comments**: Threaded discussions on images
-- **Follow System**: Connect with favorite creators
-- **Favorites**: Personal image collections
-- **Sharing**: Social media integration
-- **Notifications**: Real-time activity updates
-
-### 📊 Analytics & Insights
-- **User Dashboard**: Personal statistics and insights
-- **Image Analytics**: Views, likes, shares tracking
-- **Trending Analytics**: Popular content insights
-- **User Growth**: Follower and engagement tracking
-
----
-
-## 🛠️ Tech Stack
-
-### Frontend Technologies
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| **Next.js** | 15.2.4 | React framework with App Router |
-| **React** | 18.2.0 | UI library with hooks |
-| **TypeScript** | 5.0+ | Type-safe JavaScript |
-| **Tailwind CSS** | 3.4+ | Utility-first CSS framework |
-| **Framer Motion** | 10.16+ | Animation library |
-| **NextAuth.js** | 4.24+ | Authentication solution |
-| **React Hook Form** | 7.48+ | Form handling |
-| **React Hot Toast** | 2.4+ | Notification system |
-| **Lucide React** | 0.294+ | Icon library |
-
-### Backend Technologies
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| **Node.js** | 18.17+ | JavaScript runtime |
-| **Express.js** | 4.18+ | Web application framework |
-| **MongoDB** | 7.0+ | NoSQL database |
-| **Mongoose** | 8.0+ | MongoDB object modeling |
-| **JWT** | 9.0+ | JSON Web Tokens |
-| **Bcrypt** | 5.1+ | Password hashing |
-| **Multer** | 1.4+ | File upload handling |
-| **Cloudinary** | 1.41+ | Image management service |
-| **Nodemailer** | 6.9+ | Email sending |
-
----
-
-## 📁 Project Structure
-
-```
-Pixora/
-├── 📁 frontend/                    # Next.js 15 Application
-│   ├── 📁 src/
-│   │   ├── 📁 app/                 # App Router (Next.js 15)
-│   │   │   ├── 📁 (auth)/          # Authentication routes
-│   │   │   │   ├── 📄 login/       # Login page
-│   │   │   │   ├── 📄 register/    # Registration page
-│   │   │   │   └── 📄 help/        # Help & support
-│   │   │   ├── 📁 (protected)/     # Protected routes
-│   │   │   │   ├── 📄 dashboard/   # User dashboard
-│   │   │   │   ├── 📄 feed/        # Image feed
-│   │   │   │   ├── 📄 upload-image/ # Image upload
-│   │   │   │   ├── 📄 profile/     # User profiles
-│   │   │   │   ├── 📄 collections/ # Image collections
-│   │   │   │   ├── 📄 search/      # Search functionality
-│   │   │   │   ├── 📄 settings/    # User settings
-│   │   │   │   └── 📄 notifications/ # Notifications
-│   │   │   ├── 📁 api/             # API routes
-│   │   │   └── 📄 globals.css      # Global styles
-│   │   ├── 📁 components/          # Reusable components
-│   │   │   ├── 📁 ui/              # UI components
-│   │   │   ├── 📁 layout/          # Layout components
-│   │   │   ├── 📁 cards/           # Card components
-│   │   │   └── 📁 features/        # Feature components
-│   │   ├── 📁 context/             # React contexts
-│   │   ├── 📁 hooks/               # Custom hooks
-│   │   ├── 📁 lib/                 # Utility functions
-│   │   └── 📁 utils/               # Helper utilities
-│   ├── 📄 package.json
-│   ├── 📄 next.config.mjs
-│   ├── 📄 tailwind.config.js
-│   └── 📄 tsconfig.json
-│
-├── 📁 backend/                     # Express.js API Server
-│   ├── 📁 src/
-│   │   ├── 📁 controllers/         # Route controllers
-│   │   │   ├── 📄 user.controllers.js
-│   │   │   ├── 📄 image.controllers.js
-│   │   │   ├── 📄 collection.controllers.js
-│   │   │   ├── 📄 comment.controllers.js
-│   │   │   ├── 📄 like.controllers.js
-│   │   │   ├── 📄 favorite.controllers.js
-│   │   │   ├── 📄 follow.controllers.js
-│   │   │   └── 📄 notification.controllers.js
-│   │   ├── 📁 models/              # Database models
-│   │   │   ├── 📄 user.model.js
-│   │   │   ├── 📄 image.model.js
-│   │   │   ├── 📄 collection.model.js
-│   │   │   ├── 📄 comment.model.js
-│   │   │   ├── 📄 like.model.js
-│   │   │   ├── 📄 favorite.model.js
-│   │   │   ├── 📄 follow.model.js
-│   │   │   └── 📄 notification.model.js
-│   │   ├── 📁 routes/              # API routes
-│   │   │   ├── 📄 user.routes.js
-│   │   │   ├── 📄 image.routes.js
-│   │   │   ├── 📄 collection.routes.js
-│   │   │   ├── 📄 comment.routes.js
-│   │   │   ├── 📄 like.routes.js
-│   │   │   ├── 📄 favorite.routes.js
-│   │   │   ├── 📄 follow.routes.js
-│   │   │   └── 📄 notification.routes.js
-│   │   ├── 📁 middlewares/         # Custom middlewares
-│   │   │   └── 📄 auth.middleware.js
-│   │   ├── 📁 config/              # Configuration files
-│   │   │   ├── 📄 cloudinary.js
-│   │   │   └── 📄 multer.js
-│   │   ├── 📁 utils/               # Utility functions
-│   │   │   ├── 📄 ApiError.js
-│   │   │   ├── 📄 ApiResponse.js
-│   │   │   ├── 📄 asyncHandler.js
-│   │   │   ├── 📄 ipGeolocation.js
-│   │   │   └── 📄 userUpdates.js
-│   │   ├── 📁 db/                  # Database connection
-│   │   │   └── 📄 index.js
-│   │   ├── 📄 app.js               # Express app configuration
-│   │   ├── 📄 index.js             # Server entry point
-│   │   └── 📄 constants.js         # Application constants
-│   ├── 📄 package.json
-│   └── 📄 .env.example
-│
-├── 📄 README.md                    # This file
-├── 📄 .gitignore                   # Git ignore rules
-└── 📄 LICENSE                      # MIT License
-```
-
----
-
-## 🚀 Live Demo
+# 📸 Snapora - Next-Gen Image Sharing Platform
 
 <div align="center">
 
-### 🌐 [View Live Demo](https://pixora-nry.vercel.app/)
+![Snapora Banner](https://via.placeholder.com/1200x300/0f172a/00D4AA?text=SNAPORA+-+Share+Your+Vision)
 
-**Experience Pixora in action!**
+[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_Now-00D4AA?style=for-the-badge&logo=vercel&logoColor=white)](https://snapora-frontend.vercel.app/)
+[![GitHub Repo](https://img.shields.io/badge/📦_GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Hiomio/Snapora)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
-[![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_Now-00D4AA?style=for-the-badge&logo=vercel)](https://pixora-nry.vercel.app/)
+**A modern, feature-rich platform for photographers, artists, and content creators to share and discover stunning visual content.**
+
+[🎯 Features](#-features) • [🛠️ Tech Stack](#️-tech-stack) • [🚀 Quick Start](#-quick-start) • [📖 Documentation](#-project-structure) • [🤝 Contributing](#-contributing)
 
 </div>
 
 ---
 
-## 🛠️ Installation
+## ✨ Why Snapora?
+
+<table>
+<tr>
+<td width="33%" align="center">
+<img src="https://img.icons8.com/fluency/96/000000/lightning-bolt.png" width="64"/>
+<h3>⚡ Lightning Fast</h3>
+<p>Built with Next.js 15 & optimized for peak performance</p>
+</td>
+<td width="33%" align="center">
+<img src="https://img.icons8.com/fluency/96/000000/security-checked.png" width="64"/>
+<h3>🔐 Secure & Reliable</h3>
+<p>JWT authentication with Google OAuth integration</p>
+</td>
+<td width="33%" align="center">
+<img src="https://img.icons8.com/fluency/96/000000/like.png" width="64"/>
+<h3>💬 Fully Interactive</h3>
+<p>Comments, likes, follows, and real-time notifications</p>
+</td>
+</tr>
+</table>
+
+---
+
+## 🎯 Features
+
+### 🔐 **Authentication & Security**
+
+```mermaid
+graph LR
+    A[User] -->|Email/Password| B[JWT Auth]
+    A -->|Google OAuth| B
+    B --> C[Email Verification]
+    C --> D[Secure Access]
+    style B fill:#00D4AA
+    style D fill:#22c55e
+```
+
+- ✅ Multi-provider login (Email + Google OAuth)
+- ✅ Email verification for secure activation
+- ✅ JWT stateless authentication
+- ✅ Role-based access control
+- ✅ Bcrypt password hashing
+
+### 📸 **Image Management**
+
+<details>
+<summary><b>🖼️ Advanced Image Features</b> (click to expand)</summary>
+
+- 🎨 **Drag & Drop Upload** - Intuitive file upload interface
+- ⚡ **Auto Optimization** - Automatic compression & resizing
+- 🌈 **Format Support** - JPEG, PNG, WebP, GIF
+- ☁️ **Cloud Storage** - Cloudinary CDN integration
+- 📦 **Bulk Operations** - Upload multiple images at once
+- 🏷️ **Smart Tagging** - Organized categorization system
+
+</details>
+
+### 🎨 **User Experience**
+
+| Feature | Description |
+|---------|-------------|
+| 🌙 **Dark Theme** | Eye-friendly interface with modern aesthetics |
+| 📱 **Responsive Design** | Perfect on desktop, tablet & mobile |
+| 🧱 **Masonry Layout** | Pinterest-style image grid |
+| ♾️ **Infinite Scroll** | Seamless content loading |
+| ⌨️ **Keyboard Shortcuts** | Power user productivity features |
+
+### 🔍 **Discovery & Exploration**
+
+```
+┌─────────────────────────────────────────┐
+│  🔍 Smart Search Engine                 │
+├─────────────────────────────────────────┤
+│  ├─ 🏷️  Tag-based filtering            │
+│  ├─ 📅  Date range selection            │
+│  ├─ 🔥  Trending content                │
+│  ├─ 👤  Creator profiles                │
+│  └─ 📊  Popularity sorting              │
+└─────────────────────────────────────────┘
+```
+
+### 💬 **Social Features**
+
+<table>
+<tr>
+<td>❤️ <b>Like System</b><br/>Heart reactions with real-time updates</td>
+<td>💭 <b>Comments</b><br/>Threaded discussions on images</td>
+<td>👥 <b>Follow System</b><br/>Connect with creators</td>
+</tr>
+<tr>
+<td>⭐ <b>Favorites</b><br/>Personal image collections</td>
+<td>🔔 <b>Notifications</b><br/>Real-time activity updates</td>
+<td>🔗 <b>Sharing</b><br/>Social media integration</td>
+</tr>
+</table>
+
+### 📊 **Analytics Dashboard**
+
+<div align="center">
+
+```
+╔════════════════════════════════════════╗
+║     📈 User Dashboard Analytics        ║
+╠════════════════════════════════════════╣
+║  • Image Views & Engagement Tracking  ║
+║  • Follower Growth Insights           ║
+║  • Popular Content Analysis           ║
+║  • Trending Topic Detection           ║
+╚════════════════════════════════════════╝
+```
+
+</div>
+
+---
+
+## 🛠️ Tech Stack
+
+<div align="center">
+
+### Frontend Arsenal
+
+[![Next.js](https://img.shields.io/badge/Next.js_15-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React_18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
+
+### Backend Powerhouse
+
+[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)
+[![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=json-web-tokens&logoColor=white)](https://jwt.io/)
+[![Cloudinary](https://img.shields.io/badge/Cloudinary-3448C5?style=for-the-badge&logo=cloudinary&logoColor=white)](https://cloudinary.com/)
+
+</div>
+
+<details>
+<summary><b>📋 Detailed Technology Breakdown</b></summary>
+
+#### Frontend Technologies
+
+| Technology | Version | Purpose |
+|------------|---------|---------|
+| Next.js | 15.2.4 | React framework with App Router |
+| React | 18.2.0 | UI library with hooks |
+| TypeScript | 5.0+ | Type-safe JavaScript |
+| Tailwind CSS | 3.4+ | Utility-first CSS framework |
+| Framer Motion | 10.16+ | Animation library |
+| NextAuth.js | 4.24+ | Authentication solution |
+| React Hook Form | 7.48+ | Form handling |
+| React Hot Toast | 2.4+ | Notification system |
+| Lucide React | 0.294+ | Icon library |
+
+#### Backend Technologies
+
+| Technology | Version | Purpose |
+|------------|---------|---------|
+| Node.js | 18.17+ | JavaScript runtime |
+| Express.js | 4.18+ | Web framework |
+| MongoDB | 7.0+ | NoSQL database |
+| Mongoose | 8.0+ | MongoDB ODM |
+| JWT | 9.0+ | Token authentication |
+| Bcrypt | 5.1+ | Password hashing |
+| Multer | 1.4+ | File upload handling |
+| Cloudinary | 1.41+ | Image management |
+| Nodemailer | 6.9+ | Email service |
+
+</details>
+
+---
+
+## 📁 Project Structure
+
+<details>
+<summary><b>🗂️ Complete Directory Tree</b> (click to expand)</summary>
+
+```
+Snapora/
+├── 📂 frontend/                    # Next.js 15 Application
+│   ├── 📂 src/
+│   │   ├── 📂 app/                 # App Router
+│   │   │   ├── 📂 (auth)/          # 🔐 Authentication routes
+│   │   │   │   ├── login/          # Login page
+│   │   │   │   ├── register/       # Registration page
+│   │   │   │   └── help/           # Support page
+│   │   │   ├── 📂 (protected)/     # 🔒 Protected routes
+│   │   │   │   ├── dashboard/      # User dashboard
+│   │   │   │   ├── feed/           # Image feed
+│   │   │   │   ├── upload-image/   # Upload interface
+│   │   │   │   ├── profile/        # User profiles
+│   │   │   │   ├── collections/    # Collections
+│   │   │   │   ├── search/         # Search page
+│   │   │   │   ├── settings/       # Settings panel
+│   │   │   │   └── notifications/  # Notifications
+│   │   │   ├── 📂 api/             # API routes
+│   │   │   └── globals.css         # Global styles
+│   │   ├── 📂 components/          # Reusable components
+│   │   │   ├── ui/                 # UI components
+│   │   │   ├── layout/             # Layout components
+│   │   │   ├── cards/              # Card components
+│   │   │   └── features/           # Feature components
+│   │   ├── 📂 context/             # React contexts
+│   │   ├── 📂 hooks/               # Custom hooks
+│   │   ├── 📂 lib/                 # Utility functions
+│   │   └── 📂 utils/               # Helpers
+│   └── 📄 Configuration files...
+│
+├── 📂 backend/                     # Express.js API Server
+│   ├── 📂 src/
+│   │   ├── 📂 controllers/         # Route controllers
+│   │   ├── 📂 models/              # Database models
+│   │   ├── 📂 routes/              # API routes
+│   │   ├── 📂 middlewares/         # Custom middlewares
+│   │   ├── 📂 config/              # Configuration
+│   │   ├── 📂 utils/               # Utilities
+│   │   ├── 📂 db/                  # Database connection
+│   │   └── 📄 Entry points...
+│   └── 📄 Configuration files...
+│
+└── 📄 Documentation files...
+```
+
+</details>
+
+---
+
+## 🚀 Quick Start
 
 ### Prerequisites
 
-Before you begin, ensure you have the following installed:
+<div align="center">
 
-- **Node.js** >= 18.17.0 ([Download](https://nodejs.org/))
-- **npm** >= 9.0.0 or **yarn** >= 1.22.0
-- **MongoDB** >= 7.0 ([Download](https://mongodb.com/try/download/community) or use [MongoDB Atlas](https://cloud.mongodb.com/))
-- **Git** ([Download](https://git-scm.com/))
+| Requirement | Version | Download Link |
+|------------|---------|---------------|
+| ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js&logoColor=white) | ≥ 18.17.0 | [Download](https://nodejs.org/) |
+| ![npm](https://img.shields.io/badge/npm-CB3837?style=flat&logo=npm&logoColor=white) | ≥ 9.0.0 | Included with Node.js |
+| ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat&logo=mongodb&logoColor=white) | ≥ 7.0 | [Download](https://mongodb.com/try/download/community) |
+| ![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white) | Latest | [Download](https://git-scm.com/) |
 
-### 🚀 Quick Start
+</div>
 
-#### 1. Clone the Repository
+### Installation Steps
+
+#### 1️⃣ Clone the Repository
 
 ```bash
-# Clone the repository
-git clone https://github.com/rehmanNRY/Pixora.git
+# Clone using HTTPS
+git clone https://github.com/Hiomio/Snapora.git
 
-# Navigate to the project directory
-cd Pixora
+# Or using SSH
+git clone git@github.com:Hiomio/Snapora.git
+
+# Navigate to project
+cd Snapora
 ```
 
-#### 2. Backend Setup
+#### 2️⃣ Backend Configuration
 
 ```bash
-# Navigate to backend directory
+# Navigate to backend
 cd backend
 
 # Install dependencies
 npm install
 
-# Copy environment variables
+# Setup environment variables
 cp env.example.txt .env
 
-# Edit the .env file with your configuration
+# Edit configuration (use your preferred editor)
 nano .env
 ```
 
-**Backend Environment Variables:**
+<details>
+<summary><b>⚙️ Backend Environment Variables</b></summary>
 
 ```env
-MONGO_URI=
+# Database
+MONGO_URI=mongodb://localhost:27017/snapora
 
-PORT=
-JWT_SECRET=
-NODE_ENV=
-CORS_ORIGIN=
+# Server Configuration
+PORT=5000
+NODE_ENV=development
+CORS_ORIGIN=http://localhost:3000
 
-CLOUDINARY_CLOUD_NAME=
-CLOUDINARY_API_KEY=
-CLOUDINARY_API_SECRET=
+# Authentication
+JWT_SECRET=your_super_secret_jwt_key_here
+
+# Cloudinary Configuration
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
 ```
 
-#### 3. Frontend Setup
+</details>
+
+#### 3️⃣ Frontend Configuration
 
 ```bash
-# Navigate to frontend directory (from project root)
+# Navigate to frontend (from project root)
 cd ../frontend
 
 # Install dependencies
 npm install
 
-# Copy environment variables
+# Setup environment variables
 cp env.example.txt .env.local
 
-# Edit the .env.local file with your configuration
+# Edit configuration
 nano .env.local
 ```
 
-**Frontend Environment Variables:**
+<details>
+<summary><b>⚙️ Frontend Environment Variables</b></summary>
 
 ```env
-NEXT_PUBLIC_BACKEND_API=
+# API Configuration
+NEXT_PUBLIC_BACKEND_API=http://localhost:5000
 
-GOOGLE_CLIENT_ID=
-GOOGLE_CLIENT_SECRET=
+# Google OAuth
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
 
-NEXTAUTH_SECRET=
+# NextAuth
+NEXTAUTH_SECRET=your_nextauth_secret
+NEXTAUTH_URL=http://localhost:3000
 ```
 
-#### 4. Start the Application
+</details>
+
+#### 4️⃣ Launch the Application
+
+Open two terminal windows:
 
 **Terminal 1 - Backend Server:**
 ```bash
@@ -291,145 +357,202 @@ cd backend
 npm run dev
 ```
 
-**Terminal 2 - Frontend Development Server:**
+**Terminal 2 - Frontend Server:**
 ```bash
 cd frontend
 npm run dev
 ```
 
-### 🌐 Access the Application
+<div align="center">
 
-- **Frontend**: http://localhost:3000
-- **Backend API**: http://localhost:5000
+### 🎉 Success! Access Your Application
+
+[![Frontend](https://img.shields.io/badge/Frontend-http://localhost:3000-00D4AA?style=for-the-badge&logo=vercel)](http://localhost:3000)
+[![Backend API](https://img.shields.io/badge/Backend_API-http://localhost:5000-FF6B6B?style=for-the-badge&logo=node.js)](http://localhost:5000)
+
+</div>
 
 ---
 
 ## 🔧 Advanced Configuration
 
-### Database Configuration
+### 🍃 MongoDB Setup
 
-#### MongoDB Atlas Setup
+<details>
+<summary><b>MongoDB Atlas (Cloud)</b></summary>
 
-1. Create a [MongoDB Atlas](https://cloud.mongodb.com/) account
-2. Create a new cluster
-3. Create a database user
-4. Whitelist your IP address
-5. Get your connection string
+1. Create account at [MongoDB Atlas](https://cloud.mongodb.com/)
+2. Create a new cluster (Free tier available)
+3. Create database user with password
+4. Whitelist your IP address (or use `0.0.0.0/0` for development)
+5. Get connection string from "Connect" button
 6. Update `MONGO_URI` in your `.env` file
 
-#### Local MongoDB Setup
-
-```bash
-# Install MongoDB (macOS with Homebrew)
-brew tap mongodb/brew
-brew install mongodb-community
-
-# Start MongoDB service
-brew services start mongodb/brew/mongodb-community
-
-# Or start manually
-mongod --config /usr/local/etc/mongod.conf
+**Example Connection String:**
+```
+mongodb+srv://username:password@cluster0.xxxxx.mongodb.net/snapora?retryWrites=true&w=majority
 ```
 
-### Cloudinary Setup
+</details>
 
-1. Create a [Cloudinary](https://cloudinary.com/) account
-2. Get your cloud name, API key, and API secret
-3. Create an upload preset for unsigned uploads
-4. Update your environment variables
+<details>
+<summary><b>Local MongoDB Installation</b></summary>
 
-### Google OAuth Setup
+**macOS (using Homebrew):**
+```bash
+brew tap mongodb/brew
+brew install mongodb-community
+brew services start mongodb/brew/mongodb-community
+```
 
-1. Go to [Google Cloud Console](https://console.cloud.google.com/)
-2. Create a new project or select existing
-3. Enable Google+ API
-4. Create OAuth 2.0 credentials
+**Ubuntu/Debian:**
+```bash
+sudo apt-get install mongodb
+sudo systemctl start mongodb
+sudo systemctl enable mongodb
+```
+
+**Windows:**
+Download installer from [MongoDB Download Center](https://www.mongodb.com/try/download/community)
+
+</details>
+
+### ☁️ Cloudinary Configuration
+
+1. Sign up at [Cloudinary](https://cloudinary.com/)
+2. Navigate to Dashboard
+3. Copy your **Cloud Name**, **API Key**, and **API Secret**
+4. Create an upload preset:
+   - Go to Settings → Upload
+   - Click "Add upload preset"
+   - Set signing mode to "Unsigned"
+   - Note the preset name
+5. Update environment variables
+
+### 🔐 Google OAuth Setup
+
+1. Visit [Google Cloud Console](https://console.cloud.google.com/)
+2. Create new project or select existing
+3. Enable **Google+ API**
+4. Navigate to Credentials → Create Credentials → OAuth 2.0 Client ID
 5. Add authorized redirect URIs:
-   - `http://localhost:3000/api/auth/callback/google`
-   - `https://yourdomain.com/api/auth/callback/google`
+   ```
+   http://localhost:3000/api/auth/callback/google
+   https://yourdomain.com/api/auth/callback/google
+   ```
+6. Copy Client ID and Client Secret
+7. Update environment variables
 
 ---
 
 ## 🤝 Contributing
 
-We welcome contributions from the community! Here's how you can help:
+We ❤️ contributions! Here's how you can help make Snapora even better:
 
-### 🐛 Bug Reports
+### 🐛 Report Bugs
 
-1. Check existing [issues](https://github.com/rehmanNry/Pixora/issues)
-2. Create a new issue with:
-   - Clear description
-   - Steps to reproduce
-   - Expected vs actual behavior
-   - Screenshots (if applicable)
+Found a bug? Please check [existing issues](https://github.com/Hiomio/Snapora/issues) first, then create a new one with:
 
-### 💡 Feature Requests
+- **Clear title** and description
+- **Steps to reproduce** the issue
+- **Expected** vs **actual** behavior
+- **Screenshots** or GIFs if applicable
+- Your **environment** (OS, browser, Node version)
 
-1. Check existing [feature requests](https://github.com/rehmanNry/Pixora/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement)
-2. Create a new issue with:
-   - Feature description
-   - Use case explanation
-   - Mockups/wireframes (if applicable)
+### 💡 Suggest Features
 
-### 🔧 Code Contributions
+Have an idea? We'd love to hear it! Create a [feature request](https://github.com/Hiomio/Snapora/issues/new) with:
 
-1. **Fork the repository**
-2. **Create a feature branch:**
+- **Clear description** of the feature
+- **Use case** explanation
+- **Mockups** or wireframes (if applicable)
+- **Impact** on user experience
+
+### 🔧 Submit Code
+
+1. **Fork** the repository
+2. **Create** a feature branch:
    ```bash
    git checkout -b feature/amazing-feature
    ```
-3. **Make your changes:**
-   - Follow the coding standards
-   - Add tests for new features
-   - Update documentation
-4. **Commit your changes:**
+3. **Code** your changes
+4. **Test** thoroughly
+5. **Commit** with conventional commits:
    ```bash
-   git commit -m 'Add amazing feature'
+   git commit -m 'feat: add amazing feature'
    ```
-5. **Push to your branch:**
+6. **Push** to your fork:
    ```bash
    git push origin feature/amazing-feature
    ```
-6. **Open a Pull Request**
+7. **Open** a Pull Request
 
 ### 📋 Development Guidelines
 
-- **Code Style**: ESLint + Prettier configuration
-- **Commits**: Conventional commit messages
-- **Testing**: Write tests for new features
-- **Documentation**: Update README and code comments
-- **Performance**: Consider performance implications
+- ✅ Follow ESLint + Prettier configuration
+- ✅ Write meaningful commit messages
+- ✅ Add tests for new features
+- ✅ Update documentation
+- ✅ Ensure all tests pass
 
 ---
 
 ## 📄 License
 
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+<div align="center">
 
-```
+This project is licensed under the **MIT License**
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+
+See the [LICENSE](LICENSE) file for details.
+
+</div>
+
+---
 
 ## 🙏 Acknowledgments
 
-Special thanks to:
+<div align="center">
 
-- **Next.js Team** for the amazing framework
-- **Vercel** for hosting and deployment tools
-- **MongoDB** for the database solution
-- **Cloudinary** for image management
-- **Tailwind CSS** for the utility-first CSS framework
-- **All Contributors** who helped make this project better
+Special thanks to these amazing technologies and their communities:
+
+| Technology | Contribution |
+|------------|--------------|
+| **Next.js Team** | Amazing React framework |
+| **Vercel** | Hosting & deployment platform |
+| **MongoDB** | Powerful database solution |
+| **Cloudinary** | Image management service |
+| **Tailwind CSS** | Utility-first CSS framework |
+| **All Contributors** | Making this project better every day |
+
+</div>
 
 ---
 
 <div align="center">
 
-### 🌟 Made with ❤️ by [Kaluri Himabindhu]
+## 💫 Built With Passion
 
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Hiomio)
+### 👩‍💻 Created by **Kaluri Himabindhu**
+
+[![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=About.me&logoColor=white)](https://your-portfolio.com)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Hiomio)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kaluri-himabindhu-9378b927a/)
+[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/yourusername)
 
 ---
 
+### ⭐ Star this repository if you find it helpful!
+
+[![GitHub stars](https://img.shields.io/github/stars/Hiomio/Snapora?style=social)](https://github.com/Hiomio/Snapora/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/Hiomio/Snapora?style=social)](https://github.com/Hiomio/Snapora/network/members)
+[![GitHub watchers](https://img.shields.io/github/watchers/Hiomio/Snapora?style=social)](https://github.com/Hiomio/Snapora/watchers)
+
+---
+
+**Made with ❤️ and lots of ☕**
+
+*© 2024 Snapora. All rights reserved.*
 
 </div>
-
