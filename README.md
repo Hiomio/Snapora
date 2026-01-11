@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Snapora Banner](https://via.placeholder.com/1200x300/0f172a/00D4AA?text=SNAPORA+-+Share+Your+Vision)
+![Snapora Banner](https://raw.githubusercontent.com/Hiomio/Snapora/main/Screenshot%20(73).png)
 
 [![Live Demo](https://img.shields.io/badge/🚀_Live_Demo-Visit_Now-00D4AA?style=for-the-badge&logo=vercel&logoColor=white)](https://snapora-frontend.vercel.app/)
 [![GitHub Repo](https://img.shields.io/badge/📦_GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Hiomio/Snapora)
@@ -556,4 +556,3 @@ Special thanks to these amazing technologies and their communities:
 *© 2026 Snapora. All rights reserved.*
 
 </div>
-
