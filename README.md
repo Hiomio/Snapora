@@ -553,6 +553,7 @@ Special thanks to these amazing technologies and their communities:
 
 **Made with ❤️ and lots of ☕**
 
-*© 2024 Snapora. All rights reserved.*
+*© 2026 Snapora. All rights reserved.*
 
 </div>
+
